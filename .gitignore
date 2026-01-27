@@ -1,0 +1,12 @@
+# Dependências (caso use npm ou yarn futuramente)
+node_modules/
+dist/
+.env
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Configurações do Editor (Opcional)
+.vscode/
+*.log
