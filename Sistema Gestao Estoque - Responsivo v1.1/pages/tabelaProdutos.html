@@ -6,6 +6,10 @@
 		<title>Produtos em estoque</title>
 		<link rel="stylesheet" href="../css/tabela-styles.css" />
 		<link rel="stylesheet" href="../css/global-styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
 	</head>
 	<body>
 		<!-- Barra de navegação -->
@@ -30,52 +34,21 @@
 			</ul>
 		</nav>
 
-		<!-- Conteúdo principal -->
+		<!--Conteúdo principal -->
+		<h2 id="titulo">Produtos em estoque</h2>
 		<main id="main">
 			<section id="container">
-				<h2>Produtos em estoque</h2>
 				<table>
 					<thead>
 						<tr>
-							<th>NOME DO PRODUTO</th>
+							<th>PRODUTO</th>
 							<th>PREÇO</th>
-							<th>QUANTIDADE</th>
+							<th>QTD</th>
 							<th>VALOR TOTAL</th>
+							<th>ACÇÃO</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>PC</td>
-							<td>140 kz</td>
-							<td>40</td>
-							<td>3456 kz</td>
-							<br />
-						</tr>
-						<tr>
-							<td>SAMSUNG A06</td>
-							<td>150000 kz</td>
-							<td>5</td>
-							<td>750000</td>
-						</tr>
-						<tr>
-							<td>SAMSUNG A06s</td>
-							<td>200 kz</td>
-							<td>5</td>
-							<td>750000</td>
-						</tr>
-						<tr>
-							<td>REDMI XIOAMI 7s</td>
-							<td>200 kz</td>
-							<td>15</td>
-							<td>7000 Kz</td>
-						</tr>
-						<tr>
-							<td>HP ProDesk</td>
-							<td>1200 kz</td>
-							<td>7</td>
-							<td>95000</td>
-						</tr>
-					</tbody>
+					<tbody id="tabelaProdutos"></tbody>
 				</table>
 				<br />
 			</section>
@@ -83,16 +56,13 @@
 			<!--Secção botões-->
 
 			<section id="section-btn">
-				<h2 id="acoes-title">Acções</h2>
-				<button><b>Eliminar</b></button>
-				<button>
-					<a href="formulario.html"><b>Criar</b></a>
+				<button id="btn-voltar" onclick="voltar()">
+					<b>Voltar</b>
 				</button>
-				<button><b>Atualizar</b></button>
-				<button>
-					<a class="voltar" href="../index.html"><b>Voltar</b></a>
+
+				<button id="btn-novo" onclick="novo()">
+					<b>Novo</b>
 				</button>
-				<br />
 			</section>
 		</main>
 
@@ -109,12 +79,13 @@
 		</footer>
 
 		<!-- Script para abrir/fechar menu mobile -->
-		<script>
-			const toggle = document.getElementById("menu-toggle");
+		<script src="../js/produto-model.js">
+			/*const toggle = document.getElementById("menu-toggle");
 			const links = document.getElementById("nav-links");
 			toggle.addEventListener("click", () => {
 				links.classList.toggle("active");
-			});
+			});*/
 		</script>
+		<script src="../js/produto-controller.js"></script>
 	</body>
 </html>

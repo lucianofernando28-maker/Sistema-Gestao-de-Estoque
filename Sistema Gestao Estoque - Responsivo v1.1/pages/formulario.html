@@ -37,19 +37,20 @@
 
 		<!-- Conteúdo principal -->
 		<main>
+			<div id="mensagem" class="mensagem"></div>
 			<section class="container">
+				<h2>Adicionar novo produto</h2>
 				<!--Esse é o formulário para adicionar produto-->
-				<form class="formulario" action="tabelaProdutos.html">
-					<h2>Adicionar novo produto</h2>
+				<form class="formulario" id="formulario">
 					<div class="campo">
-						<label for="nome"><b>Nome do Produto</b></label>
+						<label for="nome" id="label"><b>Nome do Produto</b></label>
 						<input type="text" id="nome" placeholder="Digite o novo Produto" />
 					</div>
 
 					<div class="campo">
-						<label for="preco"><b>Preço </b></label>
+						<label for="preco" id="label"><b>Preço </b></label>
 						<input
-							type="number "
+							type="number"
 							id="preco"
 							placeholder="Digite o preço do produto"
 							required
@@ -57,7 +58,7 @@
 					</div>
 
 					<div class="campo">
-						<label for="quantidade"><b>Quantidade</b></label>
+						<label for="quantidade" id="label"><b>Quantidade</b></label>
 						<input
 							type="number"
 							id="quantidade"
@@ -66,20 +67,10 @@
 						/>
 					</div>
 
-					<div class="campo">
-						<label for="valor-total"><b>Valor Total</b></label>
-						<input
-							type="number"
-							id="valor-total"
-							placeholder="Digite o valor total"
-							required
-						/>
-					</div>
-
 					<div class="section-btn" id="btn-form">
-						<button id="add-btn"><b>Adicionar</b></button>
-						<button id="cancelar-btn">
-							<a href="tabelaProdutos.html"><b>Cancelar</b></a>
+						<button id="add-btn" type="submit"><b>Adicionar</b></button>
+						<button id="cancelar-btn" type="button" onclick="cancelar()">
+							<b>Cancelar</b>
 						</button>
 					</div>
 				</form>
@@ -99,12 +90,14 @@
 		</footer>
 
 		<!-- Script para abrir/fechar menu mobile -->
-		<script>
-			const toggle = document.getElementById("menu-toggle");
-			const links = document.getElementById("nav-links");
-			toggle.addEventListener("click", () => {
-				links.classList.toggle("active");
-			});
+		<script src="../js/produto-model.js">
+			/*
+						const toggle = document.getElementById("menu-toggle");
+						const links = document.getElementById("nav-links");
+						toggle.addEventListener("click", () => {
+							links.classList.toggle("active");
+						});*/
 		</script>
+		<script src="../js/produto-controller.js"></script>
 	</body>
 </html>

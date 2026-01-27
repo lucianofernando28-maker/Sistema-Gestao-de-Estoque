@@ -19,8 +19,7 @@ main section {
 	width: 90%;
 	height: 80%;
 	max-width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 
 	flex-direction: column;
 	display: flex;
@@ -32,38 +31,44 @@ main section {
 .formulario {
 	width: 100%;
 	max-width: 900px;
-	padding: 15px;
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
-	justify-content: center;
-	align-items: center;
+	gap: 8px;
 }
 
-label {
-	margin-bottom: 15px;
+.campo label {
+	margin-bottom: 8px;
 	font-weight: bold;
-	font-size: 20px;
-	text-align: left;
+	font-size: 1.2rem;
+	align-self: flex-start;
 }
 .campo {
-	width: 95%;
+	width: 80%;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 500px;
+}
+.campo input {
+	width: 100%;
+	max-width: 500px;
 }
 /*Configuração de botões*/
 #cancelar-btn {
 	background-color: brown;
 	width: 30%;
 }
-
+.section-btn button:hover {
+	background-color: rgb(43, 27, 185);
+}
 #btn-form {
 	width: 100%;
 	display: flex;
 	gap: 20px;
 	justify-content: center;
 }
-btn-form
+
 /*Configuração do botão  adicionar*/
 #add-btn {
 	width: 30%;
