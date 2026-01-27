@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Página inicial</title>
+		<link rel="stylesheet" href="css/index-styles.css" />
+		<link rel="stylesheet" href="css/global-styles.css" />
+		<link rel="stylesheet" href="css/slide-styles.css" />
+	</head>
+	<body>
+		<!-- Barra de navegação -->
+		<nav class="navbar">
+			<div class="logo">
+				<img class="logo" src="img/logo-ml.png" alt="Logo da ML" />
+			</div>
+			<div class="menu-toggle" id="menu-toggle">☰</div>
+			<ul class="nav-links" id="nav-links">
+				<li>
+					<a href="index.html"><b>Início</b></a>
+				</li>
+				<li>
+					<a href="pages/formulario.html"><b>Adicionar novo produto</b></a>
+				</li>
+				<li>
+					<a href="pages/tabelaProdutos.html"><b>Produtos em estoque</b></a>
+				</li>
+				<li>
+					<a href="pages/sobre.html"><b>Sobre</b></a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Conteúdo principal -->
+		<main id="main">
+			<section class="container">
+				<h2 id="h2">
+					BEM-VINDO AO SISTEMA DE GESTÃO DE ESTOQUE <br />
+					<hr />
+					<b style="color: rgb(1, 1, 0)">SOLUÇÕES A UM CLICK!</b>
+				</h2>
+			</section>
+			<!--Container de imagens com animação-->
+			<div class="slide">
+				<img src="img/ml-logo.jpg" alt="Logo ML" class="ativa" />
+				<img src="img/img-4.jpg" alt="Img 2" />
+				<img src="img/Robo-1.jpg" alt="im 3" />
+				<img src="img/img-01.jpg" alt="img 4" />
+				<img src="img/img-5.jpg" alt="img 5" />
+				<img src="img/img-2.jpg" alt="img 6" />
+				<img src="img/img-3.jpg" alt="img 7" />
+				<img src="img/Assistente-men.jpg" alt="img men" />
+			</div>
+		</main>
+
+		<!-- Rodapé -->
+		<footer>
+			<hr />
+			&copy;
+			<small
+				><b>
+					2025 - Luciano Fernando & Matilde Dias. <br />
+					Todos direitos reservados</b
+				></small
+			>
+		</footer>
+
+		<!-- Script para abrir/fechar menu mobile -->
+		<script>
+			const toggle = document.getElementById("menu-toggle");
+			const links = document.getElementById("nav-links");
+			toggle.addEventListener("click", () => {
+				links.classList.toggle("active");
+			});
+
+			//Evento transição de imagens
+			let indice = 0;
+			const slide = document.querySelectorAll(".slide");
+			const imagens = document.querySelectorAll("img");
+			setInterval(() => {
+				imagens[indice].classList.remove("ativa");
+				indice = (indice + 1) % imagens.length;
+				imagens[indice].classList.add("ativa");
+			}, 3000);
+		</script>
+	</body>
+</html>

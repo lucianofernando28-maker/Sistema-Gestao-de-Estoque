@@ -1,0 +1,21 @@
+h1 {
+	color: rgb(255, 255, 245);
+	background-color: rgb(27, 105, 105);
+	text-align: center;
+}
+
+#h2 {
+	text-align: center;
+	/*Sobrepor*/
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgb(246, 253, 253);
+	background-color: rgba(40, 39, 39, 0.5);
+	padding: 15px;
+	border-radius: 10px;
+	z-index: 100;
+	font-size: 5vw;
+	width: 75%;
+}

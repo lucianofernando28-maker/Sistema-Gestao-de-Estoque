@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Adicionar novo produto</title>
+		<link rel="stylesheet" href="../css/formulario-styles.css" />
+		<link rel="stylesheet" href="../css/global-styles.css" />
+	</head>
+	<body>
+		<!-- Cabeçalho
+		<header>
+			<h1 style="color: black">Adicionar novo produto</h1>
+		</header>-->
+
+		<!-- Barra de navegação -->
+		<nav class="navbar">
+			<div class="logo">
+				<img class="logo" src="../img/logo-ml.png" alt="Logo da ML" />
+			</div>
+			<div class="menu-toggle" id="menu-toggle">☰</div>
+			<ul class="nav-links" id="nav-links">
+				<li>
+					<a href="../index.html"><b>Início</b></a>
+				</li>
+				<li>
+					<a href="formulario.html"><b>Adicionar novo produto</b></a>
+				</li>
+				<li>
+					<a href="tabelaProdutos.html"><b>Produtos em estoque</b></a>
+				</li>
+				<li>
+					<a href="sobre.html"><b>Sobre</b></a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Conteúdo principal -->
+		<main>
+			<div id="mensagem" class="mensagem"></div>
+			<section class="container">
+				<h2>Adicionar novo produto</h2>
+				<!--Esse é o formulário para adicionar produto-->
+				<form class="formulario" id="formulario">
+					<div class="campo">
+						<label for="nome" id="label"><b>Nome do Produto</b></label>
+						<input type="text" id="nome" placeholder="Digite o novo Produto" />
+					</div>
+
+					<div class="campo">
+						<label for="preco" id="label"><b>Preço </b></label>
+						<input
+							type="number"
+							id="preco"
+							placeholder="Digite o preço do produto"
+							required
+						/>
+					</div>
+
+					<div class="campo">
+						<label for="quantidade" id="label"><b>Quantidade</b></label>
+						<input
+							type="number"
+							id="quantidade"
+							placeholder="Digite a quantidade"
+							required
+						/>
+					</div>
+
+					<div class="section-btn" id="btn-form">
+						<button id="add-btn" type="submit"><b>Adicionar</b></button>
+						<button id="cancelar-btn" type="button" onclick="cancelar()">
+							<b>Cancelar</b>
+						</button>
+					</div>
+				</form>
+			</section>
+		</main>
+
+		<!-- Rodapé -->
+		<footer>
+			<hr />
+			&copy;
+			<small
+				><b>
+					2025 - Luciano Fernando & Matilde Dias. <br />
+					Todos direitos reservados</b
+				></small
+			>
+		</footer>
+
+		<!-- Script para abrir/fechar menu mobile -->
+		<script src="../js/produto-model.js">
+			/*
+						const toggle = document.getElementById("menu-toggle");
+						const links = document.getElementById("nav-links");
+						toggle.addEventListener("click", () => {
+							links.classList.toggle("active");
+						});*/
+		</script>
+		<script src="../js/produto-controller.js"></script>
+	</body>
+</html>
