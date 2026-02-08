@@ -17,10 +17,12 @@ h3 {
 /*Configuração de estilos para o Container da Seção Sobre*/
 .container {
 	width: 90%;
-	background-color: rgb(255, 255, 255); /* Fundo suave para o container */
+	background-color: rgb(255, 255, 255);
+	/* Fundo suave para o container */
 	padding: 30px 20px;
 	border-radius: 6px;
-	box-shadow: 0 2px 4px rgba(65, 3, 3, 0.05); /* Sombra bem leve para profundidade */
+	box-shadow: 0 2px 4px rgba(65, 3, 3, 0.05);
+	/* Sombra bem leve para profundidade */
 	margin-top: 20px;
 	z-index: 1;
 }
@@ -54,14 +56,14 @@ h3 {
 
 /*Configuração de estilos da lista*/
 .container ul li {
-	background-color: rgb(
-		255,
-		255,
-		255
-	); /* Fundo branco para cada item da lista */
+	background-color: rgb(255,
+			255,
+			255);
+	/* Fundo branco para cada item da lista */
 	padding: 10px 15px;
 	margin-bottom: 8px;
-	border-left: 4px solid rgb(27, 105, 105); /* Linha de destaque na lateral */
+	border-left: 4px solid rgb(27, 105, 105);
+	/* Linha de destaque na lateral */
 	border-radius: 4px;
 	font-size: 0.95em;
 	color: rgb(55, 55, 58);

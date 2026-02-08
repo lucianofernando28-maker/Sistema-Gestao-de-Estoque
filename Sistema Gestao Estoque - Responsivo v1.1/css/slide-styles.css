@@ -14,6 +14,7 @@ section.container {
 	display: flex;
 	justify-content: center;
 }
+
 /*Configuração de estilos de container de slides*/
 .slide {
 	display: block;

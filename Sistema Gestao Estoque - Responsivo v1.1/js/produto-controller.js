@@ -3,7 +3,8 @@
 let loja = new Armazem();
 let tabela = document.getElementById("tabelaProdutos");
 let forma = document.getElementById("formulario");
-
+let paginaAtual = 1;
+const itensPorPagina = 5;
 // --- CRIAÇÃO DO OVERLAY PARA CAIXAS DE DIÁLOGO ---
 let overlay = document.createElement("div");
 overlay.id = "custom-modal-overlay";
@@ -72,21 +73,25 @@ window.abrirEdicao = function (id) {
 	}
 };
 
+//Processar alteração
 window.processarAtualizacao = function () {
 	let id = Number(document.getElementById("edit-id").value);
 	let n = document.getElementById("edit-nome").value;
 	let pr = Number(document.getElementById("edit-preco").value);
 	let q = Number(document.getElementById("edit-qtd").value);
 
-	/*let resultado = loja.atualizarProduto(id, n, pr, q);
-	if (resultado && resultado.erro) {
-		eexibirErro(resultado.erro);
-	} else {*/
-	loja.atualizarProduto(id, n, pr, q);
-	fecharModais();
-	AtualizaTabela();
-	exibirConfirmacao("Produto atualizado!");
-	//	}
+	// Executa a lógica de atualização no model
+	let resultado = loja.atualizarProduto(id, n, pr, q);
+
+	if (resultado.erro) {
+		// Exibe o erro se o nome já existir em outro ID ou campos forem inválidos
+		exibirErro(resultado.erro);
+	} else {
+		// Sucesso: fecha o modal de edição e atualiza a interface
+		fecharModais();
+		AtualizaTabela();
+		exibirConfirmacao("Produto atualizado com sucesso!");
+	}
 };
 
 // --- EVENTO ADICIONAR  ---
@@ -105,15 +110,7 @@ if (forma) {
 		} else {
 			exibirConfirmacao("Produto adicionado com sucesso!");
 			forma.reset();
-			/*
-			// Redireciona se estiver na página de formulário após 1.5s
-			if (window.location.pathname.includes("formulario.html")) {
-				setTimeout(function () {
-					window.location.href = "tabelaProdutos.html";
-				}, 1500);
-			} else {
-				AtualizaTabela();
-			}*/
+
 			AtualizaTabela();
 		}
 	});
@@ -122,8 +119,17 @@ if (forma) {
 function AtualizaTabela() {
 	if (!tabela) return;
 	tabela.innerHTML = "";
-	for (let i = 0; i < loja.produtos.length; i++) {
-		let p = loja.produtos[i];
+
+	//Calcular indice de inicio e fim
+	const inicio = (paginaAtual - 1) * itensPorPagina;
+	const fim = inicio + itensPorPagina;
+
+	//Extrair apenas os produtos da página atual
+	const produtosPaginados = loja.produtos.slice(inicio, fim);
+
+	//Rendirizar produtos
+	for (let i = 0; i < produtosPaginados.length; i++) {
+		let p = produtosPaginados[i];
 		let row = document.createElement("tr"); // Corrigido para criar linha
 		let total = Number(p.preco) * Number(p.qtd);
 
@@ -143,8 +149,45 @@ function AtualizaTabela() {
         `;
 		tabela.appendChild(row);
 	}
+	//Renderizar controles de navegação
+	renderizarControlesPaginacao();
 }
+//Função para criar botoes da pagina
+function renderizarControlesPaginacao() {
+	const paginacaoDiv = document.getElementById("paginacao");
+	if (!paginacaoDiv) return;
 
+	paginacaoDiv.innerHTML = "";
+	const totalPaginas = Math.ceil(loja.produtos.length / itensPorPagina);
+
+	if (totalPaginas <= 1) return; //Não mostra se houver apenas uma página
+
+	//Botão anterior
+	let btnAnterior = document.createElement("button");
+	btnAnterior.innerText = "Anterior";
+	btnAnterior.disabled = paginaAtual === 1;
+	btnAnterior.onclick = () => {
+		paginaAtual--;
+		AtualizaTabela();
+	};
+	paginacaoDiv.appendChild(btnAnterior);
+
+	//Texto pagina
+	let span = document.createElement("span");
+	span.innerText = `Página ${paginaAtual} de ${totalPaginas}`;
+	span.style.fontWeight = "bold";
+	paginacaoDiv.appendChild(span);
+
+	//Botão proximo
+	let btnProximo = document.createElement("button");
+	btnProximo.innerText = "Próximo";
+	btnProximo.disabled = paginaAtual === totalPaginas;
+	btnProximo.onclick = () => {
+		paginaAtual++;
+		AtualizaTabela();
+	};
+	paginacaoDiv.appendChild(btnProximo);
+}
 // --- MODAL DE REMOVER PRODUTO ---
 window.removerItem = function (id) {
 	// Exibe o overlay (container fundo escuro)

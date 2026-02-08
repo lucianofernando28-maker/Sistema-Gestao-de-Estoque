@@ -31,6 +31,7 @@ main {
 	/*align-items: center;*/
 	padding: 2rem;
 	background-color: rgb(247, 236, 236);
+	overflow: hidden;
 }
 
 main section {
@@ -55,10 +56,12 @@ main section {
 	display: block;
 	gap: 0;
 }
+
 .nav-links li {
 	overflow: hidden;
 	padding: 7px;
 }
+
 .nav-links li a {
 	color: rgb(10, 9, 9);
 	text-decoration: none;
@@ -69,6 +72,7 @@ main section {
 	background-color: #dc3545;
 	border-radius: 6px;
 	transform: translateY(-2px);
+
 	a {
 		color: #fff;
 	}
@@ -268,7 +272,7 @@ h2 {
 		font-size: 11pt;
 	}
 
-	main > table {
+	main>table {
 		width: 90%;
 	}
 
@@ -342,11 +346,13 @@ h2 {
 		z-index: 100;
 		gap: 20px;
 	}
+
 	.nav-links li a {
 		color: rgb(255, 255, 255);
 		text-decoration: none;
 		cursor: pointer;
 	}
+
 	.container {
 		width: 80%;
 		height: auto;

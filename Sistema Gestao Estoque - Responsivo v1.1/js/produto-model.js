@@ -1,5 +1,3 @@
-// produto-model.js
-
 class Produto {
 	constructor(id, nome, preco, qtd) {
 		this.id = id;
@@ -33,26 +31,15 @@ class Armazem {
 		if (!nome || nome.trim() === "") return "O nome é obrigatório!";
 		if (preco <= 0) return "O preço deve ser maior que 0";
 		if (qtd <= 0) return "A quantidade deve ser maior que 0";
-		if (this.produtos.some((produto) => produto.nome === nome))
-			return "Já esxiste outro produto com este nome";
 		return null;
 	}
 
-	seExiste(novoProduto) {
-		return this.produtos.some(
-			(produto) => produto.nome.toLowerCase() === novoProduto.nome.toLowerCase()
-		);
-	}
 	// Adiciona um novo produto com ID único
 	adicionarProduto(nome, preco, qtd) {
 		const erro = this.validaProduto(nome, preco, qtd);
 		if (erro != null) return { erro: erro };
-		/*const jaExiste = this.produtos.some(
-			(p) => p.nome.toLowerCase() === nome.trim().toLowerCase()
-		);
-		if (jaExiste()) {
-			return { erro: "Já esxiste outro produto com este nome" };
-		}*/
+		if (this.produtos.some((produto) => produto.nome === nome))
+			return { erro: "Já existe outro produto cadastrado com este nome!" };
 
 		let prod = new Produto(this.contadorId, nome, Number(preco), Number(qtd));
 		this.contadorId++;
@@ -61,24 +48,32 @@ class Armazem {
 		return { prod: prod };
 	}
 
-	// Atualiza um produto existente percorrendo a lista pelo ID
 	atualizarProduto(id, nome, preco, qtd) {
-		/*const duplicado = this.produtos.some(
-			(p) => p.nome.toLowerCase() === nome.toLowerCase() && p.id !== id
+		// 1. Validação de campos obrigatórios
+		const erroValidacao = this.validaProduto(nome, preco, qtd);
+		if (erroValidacao) return { erro: erroValidacao };
+
+		// 2. Verificar duplicados (Apenas se o nome for alterado)
+		// Buscamos se existe algum produto com o mesmo nome que NÃO tenha o ID atual
+		const produtoDuplicado = this.produtos.find(
+			(p) => p.nome.toLowerCase() === nome.trim().toLowerCase() && p.id !== id
 		);
-		if (duplicado()) {
-			return { erro: "Já esxiste outro produto com este nome" };
-		}*/
+
+		if (produtoDuplicado) {
+			return { erro: "Já existe outro produto cadastrado com este nome!" };
+		}
+
+		// 3. Processo de atualização
 		for (let i = 0; i < this.produtos.length; i++) {
 			if (this.produtos[i].id === id) {
-				this.produtos[i].nome = nome;
+				this.produtos[i].nome = nome.trim();
 				this.produtos[i].preco = Number(preco);
 				this.produtos[i].qtd = Number(qtd);
-				this.salvar();
-				//break;
+				this.salvar(); // Salva no LocalStorage
 				return { sucesso: true };
 			}
 		}
+		return { erro: "Produto não encontrado." };
 	}
 
 	// Remove um produto filtrando a lista

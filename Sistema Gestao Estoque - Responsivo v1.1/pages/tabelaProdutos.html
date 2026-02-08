@@ -48,20 +48,21 @@
 							<th>ACÇÃO</th>
 						</tr>
 					</thead>
-					<tbody id="tabelaProdutos"></tbody>
+					<tbody style="max-height: 5px" id="tabelaProdutos"></tbody>
 				</table>
 				<br />
+				<div id="paginacao"></div>
 			</section>
 
 			<!--Secção botões-->
 
 			<section id="section-btn">
-				<button id="btn-voltar" onclick="voltar()">
-					<b>Voltar</b>
-				</button>
-
 				<button id="btn-novo" onclick="novo()">
 					<b>Novo</b>
+				</button>
+
+				<button id="btn-voltar" onclick="voltar()">
+					<b>Voltar</b>
 				</button>
 			</section>
 		</main>
@@ -79,13 +80,7 @@
 		</footer>
 
 		<!-- Script para abrir/fechar menu mobile -->
-		<script src="../js/produto-model.js">
-			/*const toggle = document.getElementById("menu-toggle");
-			const links = document.getElementById("nav-links");
-			toggle.addEventListener("click", () => {
-				links.classList.toggle("active");
-			});*/
-		</script>
+		<script src="../js/produto-model.js"></script>
 		<script src="../js/produto-controller.js"></script>
 	</body>
 </html>
