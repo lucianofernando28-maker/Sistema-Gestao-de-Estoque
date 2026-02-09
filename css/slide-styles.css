@@ -1,0 +1,59 @@
+/*Configuração de container section*/
+section.container {
+	padding: 0;
+	margin: 0;
+	gap: 0;
+}
+
+/*Configuração extra de container main*/
+#main {
+	padding: 0;
+	margin: 0;
+	gap: 0;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+}
+/*Configuração de estilos de container de slides*/
+.slide {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-y: hidden;
+	overflow-x: hidden;
+
+	/*Colocar em baixo do conteúdo*/
+	background-size: cover;
+	background-position: center;
+
+	width: 100%;
+	/*max-width: 100%;*/
+	height: 100vh;
+	/*z-index: 1;*/
+}
+
+/*Configuração de estilos de imagens*/
+.slide img {
+	width: 100%;
+	height: 100%;
+
+	/*Efeitos transição*/
+	opacity: 0;
+	display: flex;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: cover;
+	animation: slide 1s infinite;
+	transition: transform 1s ease-in-out;
+	left: 0%;
+	right: 0%;
+	background-size: cover;
+	background-position: center;
+}
+
+/*Ativa*/
+.slide img.ativa {
+	opacity: 1;
+}

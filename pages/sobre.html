@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sobre</title>
+		<link rel="stylesheet" href="../css/sobre-styles.css" />
+		<link rel="stylesheet" href="../css/global-styles.css" />
+	</head>
+	<body>
+		<!-- Barra de navegação -->
+		<nav class="navbar">
+			<div class="logo">
+				<img class="logo" src="../img/logo-ml.png" alt="Logo da ML" />
+			</div>
+			<div class="menu-toggle" id="menu-toggle">☰</div>
+			<ul class="nav-links" id="nav-links">
+				<li>
+					<a href="../index.html"><b>Início</b></a>
+				</li>
+				<li>
+					<a href="formulario.html"><b>Adicionar novo produto</b></a>
+				</li>
+				<li>
+					<a href="tabelaProdutos.html"><b>Produtos em estoque</b></a>
+				</li>
+				<li>
+					<a href="sobre.html"><b>Sobre</b></a>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Conteúdo principal -->
+		<main id="main-sobre">
+			<section class="container" id="sobre">
+				<h2>Sobre o Sistema de Gestão de Estoque</h2>
+				<p>
+					Este sistema é uma aplicação web desenvolvida para auxiliar na gestão
+					e controle de produtos em estoque. O objetivo principal é proporcionar
+					uma ferramenta simples e eficiente para visualizar, adicionar e
+					gerenciar o inventário.
+				</p>
+				<p>As principais funcionalidades incluem:</p>
+				<ul>
+					<li>
+						<b>Adicionar Novo Produto:</b>Permite o registro de novos itens no
+						estoque, inserindo o nome do produto, preço, quantidade e valor
+						total (visto em <b><i>formulario.html</i></b
+						>).
+					</li>
+					<li>
+						<b>Produtos em Estoque:</b> Oferece uma tabela com a visualização
+						completa do inventário, incluindo nome, preço, quantidade e valor
+						total de cada produto (visto em <b><i>tabelaProdutos.html</i></b
+						>).
+					</li>
+					<li>
+						<b>Navegação Rápida:</b> Um menu de navegação responsivo facilita o
+						acesso entre as diferentes seções da aplicação.
+					</li>
+				</ul>
+				<p>
+					O projeto foi desenvolvido como um trabalho prático de aprendizagem
+					para a disciplina de <b><i>Aplicações Web</i></b
+					>, utilizando HTML, CSS e JavaScript. Foi desenvolvido pelos
+					estudantes <b>Luciano Fernando e Matilde Dias</b>, do curso de
+					Ciências de Computação do 3<sup>a</sup> ano.
+				</p>
+			</section>
+		</main>
+
+		<!-- Rodapé -->
+		<footer>
+			<hr />
+			&copy;
+			<small
+				><b>
+					2025 - Luciano Fernando & Matilde Dias. <br />
+					Todos direitos reservados</b
+				></small
+			>
+		</footer>
+
+		<!-- Script para abrir/fechar menu mobile -->
+		<script>
+			const toggle = document.getElementById("menu-toggle");
+			const links = document.getElementById("nav-links");
+			toggle.addEventListener("click", () => {
+				links.classList.toggle("active");
+			});
+		</script>
+	</body>
+</html>
