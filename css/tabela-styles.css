@@ -83,17 +83,11 @@ a {
 	border-radius: 6px;
 	margin-bottom: 1rem;
 	transition: border-color 0.3s ease;
-	background-color: rgb(5, 91, 102);
 	color: white;
 	border: none;
 	gap: 0;
 }
 
-
-
-#section-btn button:hover {
-	background-color: rgb(6, 112, 184);
-}
 
 /* Estilo base dos botões */
 .btn {
@@ -114,13 +108,13 @@ a {
 
 /* Botão Editar (Azul) */
 .btn-editar {
-	background-color: rgb(6, 112, 184);
+	background-color: var(--primary);
 
 	color: white;
 }
 
 .btn-editar:hover {
-	background-color: rgb(5, 83, 136);
+	background-color: var(--btn-hover);
 }
 
 /* Botão Eliminar (Vermelho) */
@@ -135,8 +129,8 @@ a {
 
 #titulo {
 	text-align: center;
-	background-color: rgb(247, 236, 236);
-	padding: 4px;
+	background-color: var(--bg);
+	padding: 8px;
 }
 
 td {
@@ -167,8 +161,8 @@ th {
 }
 
 #paginacao button {
-	background-color: #055b66;
-	color: white;
+	background-color: rgb(14, 137, 146);
+	color: var(--bg-hover);
 	border: none;
 	padding: 8px 15px;
 	border-radius: 4px;
@@ -178,12 +172,12 @@ th {
 }
 
 #paginacao button:hover {
-	background-color: rgb(6, 112, 184);
+	background-color: var(--btn-hover);
 }
 
 /*Quando estiver desabilitado*/
 #paginacao button:disabled {
-	background-color: #bebcbc;
+	background-color: #969595;
 	color: #333232;
 	cursor: not-allowed;
 	opacity: 0.7;

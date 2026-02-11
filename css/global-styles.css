@@ -9,6 +9,15 @@
 	gap: 0;
 }
 
+:root {
+	--bg: #5f5b5c50;
+	--bg-hover: #ffff;
+	--text: #193868;
+	--primary: #021f4bc7;
+	--btn-hover: #0056b3;
+	--btn-text: #ffff;
+}
+
 /* Estrutura básica */
 html,
 body {
@@ -28,9 +37,9 @@ main {
 	flex: 1;
 	display: flex;
 	justify-content: center;
-	/*align-items: center;*/
 	padding: 2rem;
-	background-color: rgb(247, 236, 236);
+	background-color: var(--bg);
+
 	overflow: hidden;
 }
 
@@ -44,7 +53,7 @@ main section {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgb(27, 105, 105);
+	background-color: var(--primary);
 	color: white;
 	padding: 1rem 1rem;
 	overflow: hidden;
@@ -69,14 +78,17 @@ main section {
 }
 
 .nav-links :hover {
-	background-color: #dc3545;
+	background-color: var(--bg);
 	border-radius: 6px;
 	transform: translateY(-2px);
+	cursor: pointer;
 
-	a {
-		color: #fff;
+	a:hover {
+		background-color: var(--bg-hover);
 	}
 }
+
+
 
 /* Ícone menu mobile */
 .menu-toggle {
@@ -106,43 +118,43 @@ button {
 	width: 20%;
 	cursor: pointer;
 	transition: ease;
-	background-color: rgb(5, 91, 102);
+	background-color: var(--primary);
+	font-size: 1rem;
 }
 
 button:hover {
-	background-color: #0056b3;
+	background-color: var(--btn-hover);
 }
+
 
 .section-btn button {
 	padding: 8px;
 	border: 1px solid rgb(128, 124, 127);
 	border-radius: 6px;
-	margin-bottom: 1rem;
+	margin-bottom: 0.6rem;
 	font-size: 15px;
 	transition: border-color 0.3s ease;
-	background-color: rgb(5, 91, 102);
-	color: white;
-	display: inline-block;
+	color: var(--btn-text);
 }
 
 /* ===== FOOTER ===== */
 footer {
-	background: rgb(128, 124, 127);
-	color: rgb(255, 255, 255);
+	background: #021f4bda;
+	color: #FFFF;
 	text-align: center;
 	padding: 1rem;
 }
 
 hr {
 	padding: 2px;
-	background-color: rgb(107, 7, 43);
+	background-color: var(--bg-hover);
 	border: none;
 }
 
 /*Configuração do título*/
 h2 {
-	color: rgb(107, 7, 43);
-	font-size: 2.5em;
+	color: var(--text);
+	font-size: 1.5em;
 }
 
 /*Caixas de dialogos*
@@ -268,9 +280,6 @@ h2 {
 		align-items: start;
 	}
 
-	label {
-		font-size: 11pt;
-	}
 
 	main>table {
 		width: 90%;
@@ -290,12 +299,11 @@ h2 {
 
 	/*Configuração do botão  adicionar*/
 	#add-btn {
-		width: 35%;
+		width: 80%;
 	}
 
 	#cancelar-btn {
-		background-color: brown;
-		width: 35%;
+		width: 80%;
 	}
 
 	#section-btn {
@@ -321,11 +329,6 @@ h2 {
 		/* Reduz o tamanho da fonte do título */
 	}
 
-	/*Configuração do título*/
-	h2 {
-		color: rgb(107, 7, 43);
-		font-size: 1.5em;
-	}
 }
 
 /* Tablet e Desktop */
@@ -353,6 +356,14 @@ h2 {
 		cursor: pointer;
 	}
 
+	.nav-links :hover {
+		background-color: var(--bg-hover);
+
+		a {
+			color: var(--text);
+		}
+	}
+
 	.container {
 		width: 80%;
 		height: auto;
@@ -366,6 +377,25 @@ h2 {
 		width: 100%;
 		grid-area: container;
 		gap: 0;
+	}
+
+	#btn-form {
+
+		display: flex;
+		gap: 40px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+
+	}
+
+	#add-btn {
+		width: 200px;
+	}
+
+	#cancelar-btn {
+
+		width: 200px;
 	}
 
 	#section-btn {
