@@ -1,0 +1,90 @@
+/*Configuração do main*/
+main {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	background-color: rgb(247, 236, 236);
+}
+
+/*Configuração do section main*/
+main section {
+	max-width: 800px;
+	text-align: center;
+}
+
+/*Configuração do container*/
+.container {
+	width: 90%;
+	height: 80%;
+	max-width: 900px;
+	margin: 0 auto;
+
+	flex-direction: column;
+	display: flex;
+	color: rgb(0, 0, 0);
+	background-color: rgba(12, 189, 150, 0.4);
+	border-radius: 10px;
+}
+
+.formulario {
+	width: 100%;
+	max-width: 900px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.campo label {
+	margin-bottom: 8px;
+	font-weight: bold;
+	font-size: 1.2rem;
+	align-self: flex-start;
+}
+
+.campo {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 500px;
+}
+
+.campo input {
+	width: 100%;
+	max-width: 500px;
+}
+
+/*Configuração de botões*/
+#cancelar-btn {
+	background-color: brown;
+	width: 30%;
+}
+
+.section-btn button:hover {
+	background-color: #0056b3;
+}
+
+#cancelar-btn:hover {
+	background-color: rgb(136, 13, 13);
+}
+
+#btn-form {
+	width: 100%;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+
+/*Configuração do botão  adicionar*/
+#add-btn {
+	width: 30%;
+}
+
+/*Configuração do link*/
+a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+}

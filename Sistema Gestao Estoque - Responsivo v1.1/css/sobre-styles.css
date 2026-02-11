@@ -1,0 +1,71 @@
+/*Configuração adicional de container*/
+#main-sobre {
+	padding: 20px 15px;
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: rgba(12, 189, 150, 0.4);
+	z-index: 1;
+}
+
+/*Configuração de títulos*/
+h2,
+h3 {
+	color: rgb(107, 7, 43);
+	font-size: 1.8em;
+}
+
+/*Configuração de estilos para o Container da Seção Sobre*/
+.container {
+	width: 90%;
+	background-color: rgb(255, 255, 255);
+	/* Fundo suave para o container */
+	padding: 30px 20px;
+	border-radius: 6px;
+	box-shadow: 0 2px 4px rgba(65, 3, 3, 0.05);
+	/* Sombra bem leve para profundidade */
+	margin-top: 20px;
+	z-index: 1;
+}
+
+/*Configuração de títulos*/
+.container h2 {
+	color: rgb(107, 7, 43);
+	font-size: 1.8em;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(107, 7, 43);
+}
+
+/*Configuração de paragráfos*/
+.container p {
+	line-height: 1.6;
+	/* Espaçamento de linha para facilitar a leitura */
+	margin-bottom: 15px;
+	color: rgb(0, 0, 0);
+	text-align: justify;
+	/* Justifica o texto para um visual mais limpo */
+}
+
+/*Estilos para a Lista (Funcionalidades)*/
+.container ul {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
+/*Configuração de estilos da lista*/
+.container ul li {
+	background-color: rgb(255,
+			255,
+			255);
+	/* Fundo branco para cada item da lista */
+	padding: 10px 15px;
+	margin-bottom: 8px;
+	border-left: 4px solid rgb(27, 105, 105);
+	/* Linha de destaque na lateral */
+	border-radius: 4px;
+	font-size: 0.95em;
+	color: rgb(55, 55, 58);
+	text-align: justify;
+}
